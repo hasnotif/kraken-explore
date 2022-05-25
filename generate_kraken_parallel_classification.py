@@ -10,7 +10,8 @@ def main():
 
     # get list of database directories
     db_dirs = [x for x in os.listdir(db_path) if os.path.isdir(os.path.join(db_path, x))]
-    
+    db_dirs.remove("base")
+
     # generate Makefile
     mg = MakefileGenerator("run_kraken.mk")
     ds1 = os.path.join(dataset_path, "iss_50r_viral_R1.fastq")
