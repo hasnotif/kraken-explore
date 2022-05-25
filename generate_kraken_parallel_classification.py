@@ -19,10 +19,11 @@ def main():
     for dir in db_dirs:
         d = os.path.join(db_path, dir)
         p = os.path.join(res_path, f"{dir}_results")
+        r = os.path.join(p, "results.standard")
         os.mkdir(p)
-        tgt = os.path.join(p, ".OK")
+        tgt = p + ".OK"
         dep = ""
-        cmd = f"kraken2 --db {d} --threads 12 --paired {ds1} {ds2}"
+        cmd = f"kraken2 --db {d} --threads 12 --paired {ds1} {ds2} > {r}"
         mg.add(tgt, dep, cmd)
     mg.write()
 
