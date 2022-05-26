@@ -56,9 +56,9 @@ def main():
                 else:
                     print("Invalid result found, skipping.")
                     continue
-        classification_rate = "{:.2%}".format(num_c/(num_c + num_u))
-        sensitivity = "{:.2%}".format(num_tp/(num_tp + num_fn + num_fp + num_vp))
-        ppv = "{:.2%}".format(num_tp/(num_tp + num_fp))
+        classification_rate = "{:.4}".format((num_c/(num_c + num_u))*100)
+        sensitivity = "{:.4}".format((num_tp/(num_tp + num_fn + num_fp + num_vp))*100)
+        ppv = "{:.4}".format((num_tp/(num_tp + num_fp))*100)
         res_lines.append(f"{dir}\t{classification_rate}\t{sensitivity}\t{ppv}\n")
         print("Done.")
 
