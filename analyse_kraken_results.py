@@ -21,7 +21,7 @@ def main():
     # read in Kraken2 results for each database and perform calculations
     res_dirs = [x for x in os.listdir(res_path) if os.path.isdir(os.path.join(res_path, x))]
     res_lines = []
-    header = f"Database\tClassification_Rate\tSensitivity\n"
+    header = f"Database\tClassification_Rate\tSensitivity\tPPV\n"
     res_lines.append(header)
     for dir in res_dirs:
         print(f"Analysing {dir}...", end = " ")
